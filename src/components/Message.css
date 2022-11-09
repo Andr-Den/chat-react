@@ -1,0 +1,12 @@
+.message__text {
+  padding: 14px 0 14px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #ffffff;
+  background: #4285F4;
+  border-radius: 3px;
+  border: none;
+  max-width: 360px;
+}

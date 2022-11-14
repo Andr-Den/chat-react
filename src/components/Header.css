@@ -1,0 +1,26 @@
+.header {
+  margin: 0 auto 0;
+  padding-bottom: 18px;
+  padding-top: 18px;
+  max-width: 1140px;
+  color: #FFFFFF;
+  display: flex;
+  justify-content:flex-end; 
+}
+
+.header__button {
+  padding: 14px 0 14px;
+  width: 100px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  background: #4285F4;
+  border-radius: 3px;
+  border: none;
+  color: #ffffff;
+}
+
+.header__button:hover {
+  cursor: pointer;
+}

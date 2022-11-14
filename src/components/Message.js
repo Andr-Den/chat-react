@@ -6,7 +6,7 @@ function Message({name, text}) {
 
   return (
     <li>
-      <h3>{name}</h3>
+      <h3 className="message__title">{name}</h3>
       <p className="message__text">{text}</p>
     </li>
 )}

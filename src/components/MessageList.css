@@ -1,8 +1,15 @@
 .message-list {
   color: #ffffff;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  overflow-y: scroll;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .message-list__field {
   background-color: #ffffff;
+  border-radius: 3px;
 }

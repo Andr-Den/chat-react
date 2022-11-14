@@ -8,8 +8,8 @@ function MessageList({messages}) {
   return (
     <div className="message-list__field">
         <ul className="message-list">
-          {messages.map(({name, text}, index) => (
-            <Message name={name} text={text} key={index}/>
+          {messages?.map(({name, text}, index) => (
+            <Message name={name} text={text} key={index} />
           ))}
         </ul>
     </div>

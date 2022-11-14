@@ -6,6 +6,7 @@ import Header from './Header';
 import './Chat.css'
 
 function Chat({ setMessageText, messageText, setMessages, messages, onClick }) {
+
   function handleTextChange(e) {
     setMessageText(e.target.value);
   }
@@ -25,12 +26,14 @@ function Chat({ setMessageText, messageText, setMessages, messages, onClick }) {
   return (
     <div className="page">
       <Header onClick={onClick}/>
-      <h2 className="chat__title">Комната А</h2>
-      {messages.length !== 0 ? <MessageList messages={messages}/>: ''}
-      <form onSubmit={handleMessageSubmit}>
-        <input type="text" onChange={handleTextChange} value={messageText || ''}/>
-        <input type="submit" value="Отправить" name="submit_button" className={`sign__button`} />
-      </form>
+      <div className="chat">
+        <h2 className="chat__title">Комната А</h2>
+        {messages ? <MessageList messages={messages} />: ''}
+        <form onSubmit={handleMessageSubmit}  className="chat__form">
+          <input type="text" onChange={handleTextChange} value={messageText || ''} className="chat__input"/>
+          <input type="submit" value="Отправить" name="submit_button" className="chat__button" />
+        </form>
+      </div>
     </div>
   )
 };

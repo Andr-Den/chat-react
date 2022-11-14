@@ -16,7 +16,7 @@ function App() {
   const [users, setUsers] = React.useState(JSON.parse(localStorage.getItem('usersList')));
   const [tooltipOpen, setTooltipOpen] = React.useState(false)
 
-  const [messages, setMessages] = React.useState(JSON.parse(localStorage.getItem('roomMessages')))
+  const [messages, setMessages] = React.useState(JSON.parse(localStorage.getItem('roomMessages')) || [])
   const [messageText, setMessageText] = React.useState('');
 
   function handleRegisterSubmit(e) {

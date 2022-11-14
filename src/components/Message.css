@@ -8,9 +8,17 @@
   background: #4285F4;
   border-radius: 3px;
   border: none;
-  max-width: 360px;
+  width: 360px;
 }
 
 .message__title {
   color: #000000;
+}
+
+.message__left {
+  align-self: flex-start;
+}
+
+.message__right {
+  align-self: flex-end;
 }

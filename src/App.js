@@ -35,6 +35,7 @@ function App() {
 
   function handleLoginSubmit(e) {
     e.preventDefault();
+    localStorage.setItem('user', name);
     const user = JSON.parse(localStorage.getItem('usersList')).find(e => e.userName === name)
     const userPassword = JSON.parse(localStorage.getItem('usersList')).find(e => e.userPassword === password)
     if (user && userPassword) {navigated("/chat")} else {navigated("/sign-up")}
@@ -47,6 +48,7 @@ function App() {
   function handleExitClick(e) {
     e.preventDefault();
     localStorage.setItem('roomMessages', JSON.stringify(messages))
+    localStorage.removeItem('user');
     navigated("/")
   }
 

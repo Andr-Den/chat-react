@@ -3,31 +3,16 @@ import Message from './Message';
 
 import './MessageList.css'
 
-function MessageList() {
-
-  const messages = [
-    {
-      name: "Petya",
-      text: "HHVBDSBC SBsjBCd,sc "
-    },
-    {
-      name: "Petya",
-      text: "2"
-    },
-    {
-      name: "Petya",
-      text: "H3"
-    }
-  ]
+function MessageList({messages}) {
 
   return (
-    <>
+    <div className="message-list__field">
         <ul className="message-list">
           {messages.map(({name, text}, index) => (
             <Message name={name} text={text} key={index}/>
           ))}
         </ul>
-      </>
+    </div>
 )}
 
 export default MessageList;

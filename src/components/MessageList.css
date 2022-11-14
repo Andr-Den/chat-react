@@ -2,3 +2,7 @@
   color: #ffffff;
   list-style: none;
 }
+
+.message-list__field {
+  background-color: #ffffff;
+}

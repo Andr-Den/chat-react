@@ -1,7 +1,9 @@
 import React from 'react'
 import './Register.css'
 
-function Register({name, password, handleSubmit, setName, setPassword}) {
+import Header from './Header';
+
+function Register({name, password, handleSubmit, setName, setPassword, onClick}) {
 
   function handleNameChange(e) {
     setName(e.target.value);
@@ -12,7 +14,9 @@ function Register({name, password, handleSubmit, setName, setPassword}) {
   }
 
   return (
+    <>
       <div className="sign">
+      <Header onClick={onClick}/>
         <form onSubmit={handleSubmit}>
           <fieldset className="sign__container">
             <h2 className="sign__title">Добро пожаловать!</h2>
@@ -25,6 +29,7 @@ function Register({name, password, handleSubmit, setName, setPassword}) {
           </fieldset> 
         </form>
       </div>
+      </>
   )
 };
 

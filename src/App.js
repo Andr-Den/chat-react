@@ -12,6 +12,7 @@ import Main from './components/Main';
 function App() {
   const [name, setName] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [room, setRoom] = React.useState('');
   const navigated = useNavigate()
   const [users, setUsers] = React.useState(JSON.parse(localStorage.getItem('usersList')));
   const [tooltipOpen, setTooltipOpen] = React.useState(false)
@@ -38,7 +39,7 @@ function App() {
     localStorage.setItem('user', name);
     const user = JSON.parse(localStorage.getItem('usersList')).find(e => e.userName === name)
     const userPassword = JSON.parse(localStorage.getItem('usersList')).find(e => e.userPassword === password)
-    if (user && userPassword) {navigated("/chat")} else {navigated("/sign-up")}
+    if (user && userPassword) {navigated(`/${room}`)} else {navigated("/sign-up")}
   }
 
   function handleInfoClose(e) {
@@ -70,7 +71,7 @@ function App() {
         } />
         <Route exact path="/sign-in" element = {
           <>
-            <Login handleSubmit={handleLoginSubmit} setName={setName} setPassword={setPassword}/>
+            <Login handleSubmit={handleLoginSubmit} setName={setName} setPassword={setPassword}  setRoom={setRoom}/>
           </>
         } />
         <Route path="/chat" element={

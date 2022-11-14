@@ -1,11 +1,14 @@
 import React from 'react'
 import './Register.css'
 
-function Login({handleSubmit}) {
+import Header from './Header';
+
+function Login({handleSubmit, onClick}) {
 
   return (
     <div className="page">
       <div className="sign">
+      <Header onClick={onClick}/>
         <form onSubmit={handleSubmit}>
           <fieldset className="sign__container">
             <h2 className="sign__title">Добро пожаловать!</h2>

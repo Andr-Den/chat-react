@@ -7,6 +7,7 @@ import Register from './components/Register';
 import Chat from './components/Chat';
 import Login from './components/Login';
 import InfoTooltip from './components/InfoTooltip';
+import Main from './components/Main';
 
 function App() {
   const [name, setName] = React.useState('');
@@ -40,18 +41,30 @@ function App() {
     setTooltipOpen(false)
   }
 
+  function handleExitClick(e) {
+    e.preventDefault();
+    navigated("/")
+  }
+
   return (
     <div className="App">
       <Routes>
-        <Route exact path="/sign-up" element = {
+        <Route exact path="/" element = {
           <>
-            <Register handleSubmit={handleRegisterSubmit} name={name} password={password} setName={setName} setPassword={setPassword}/>
+            <Main />
+          </>
+        }>
+
+        </Route>
+        <Route path="/sign-up" element = {
+          <>
+            <Register handleSubmit={handleRegisterSubmit} name={name} password={password} setName={setName} setPassword={setPassword} onClick={handleExitClick}/>
             {tooltipOpen ? <InfoTooltip onClose={handleInfoClose}/> : ''}
           </>
         } />
         <Route exact path="/sign-in" element = {
           <>
-            <Login handleSubmit={handleLoginSubmit}/>
+            <Login handleSubmit={handleLoginSubmit} onClick={handleExitClick}/>
           </>
         } />
         <Route path="/chat" element={

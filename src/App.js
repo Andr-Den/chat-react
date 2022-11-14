@@ -16,12 +16,15 @@ function App() {
   const [users, setUsers] = React.useState(JSON.parse(localStorage.getItem('usersList')));
   const [tooltipOpen, setTooltipOpen] = React.useState(false)
 
+  const [messages, setMessages] = React.useState(JSON.parse(localStorage.getItem('roomMessages')))
+  const [messageText, setMessageText] = React.useState('');
+
   function handleRegisterSubmit(e) {
     e.preventDefault();
     localStorage.setItem('user', name);
     const newUser = {userName: name, userPassword: password}
     const sameUser = users.find(e => e.userName === name)
-    if (sameUser.userName !== name) {
+    if (!sameUser) {
       localStorage.setItem('usersList', JSON.stringify([...users, newUser]))
       setUsers([...users, newUser])
       navigated("/sign-in")
@@ -43,6 +46,7 @@ function App() {
 
   function handleExitClick(e) {
     e.preventDefault();
+    localStorage.setItem('roomMessages', JSON.stringify(messages))
     navigated("/")
   }
 
@@ -58,18 +62,18 @@ function App() {
         </Route>
         <Route path="/sign-up" element = {
           <>
-            <Register handleSubmit={handleRegisterSubmit} name={name} password={password} setName={setName} setPassword={setPassword} onClick={handleExitClick}/>
+            <Register handleSubmit={handleRegisterSubmit} name={name} password={password} setName={setName} setPassword={setPassword}/>
             {tooltipOpen ? <InfoTooltip onClose={handleInfoClose}/> : ''}
           </>
         } />
         <Route exact path="/sign-in" element = {
           <>
-            <Login handleSubmit={handleLoginSubmit} onClick={handleExitClick}/>
+            <Login handleSubmit={handleLoginSubmit} setName={setName} setPassword={setPassword}/>
           </>
         } />
         <Route path="/chat" element={
           <>
-          <Chat />
+            <Chat onClick={handleExitClick}  messages={messages} setMessages={setMessages}  messageText={messageText} setMessageText={setMessageText} />
           </>
         } />
       </Routes>

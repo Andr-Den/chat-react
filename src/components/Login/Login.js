@@ -1,5 +1,5 @@
 import React from 'react'
-import './Register.css'
+import '../Register/Register.css'
 
 function Login({handleSubmit, setName, setPassword, setRoom}) {
 
@@ -28,7 +28,8 @@ function Login({handleSubmit, setName, setPassword, setRoom}) {
             <span className="sign__description">Комната</span>
             <select className="sign__input" name="rooms" required onChange={handleRoomChange}>
               <option >Выберите комнату</option>
-              <option value="chat">Комната А</option>
+              <option value="chatA">Комната А</option>
+              <option value="chatB">Комната Б</option>
             </select>
             <input type="submit" value='Войти' name="submit_button" className={`sign__button sign__button_login`} />
             <span className="sign__bottom">Ещё не зарегистрированы? <a href="/sign-up" className="sign__link">Регистрация</a></span>

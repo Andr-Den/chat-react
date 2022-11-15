@@ -38,4 +38,13 @@
 .main__links {
   color: #ffffff;
   text-decoration: none;
+  padding: 14px 0 14px;
+  margin: 70px 0 0;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  background: #4285F4;
+  border-radius: 3px;
+  border: none;
 }

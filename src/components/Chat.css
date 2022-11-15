@@ -32,6 +32,10 @@
   width: 25%;
 }
 
+.chat__button:hover {
+  cursor: pointer;
+}
+
 .chat__input {
   width: 70%;
   padding: 15px;
